@@ -1,0 +1,30 @@
+<div class="container">
+    <!-- Alertes -->
+    <app-alert-success *ngIf="showAlertSuccess"></app-alert-success>
+    <app-alert-error *ngIf="showAlertError" [message]="errorMessage"></app-alert-error>
+  
+    <!-- Formulaire d'ajout d'utilisateur -->
+    <form >
+      <div>
+        <label for="nom">Nom:</label>
+        <input id="nom" [(ngModel)]="nom" name="nom" type="text" required />
+      </div>
+  
+      <div>
+        <label for="prenom">Prénom:</label>
+        <input id="prenom" [(ngModel)]="prenom" name="prenom" type="text" required />
+      </div>
+  
+      <button (click)="ajouterUtilisateur()">Ajouter Utilisateur</button>
+    </form>
+  
+    <hr />
+  
+    <!-- Liste des utilisateurs -->
+    <h3>Liste des Utilisateurs :</h3>
+    <ul>
+      <li *ngFor="let utilisateur of utilisateurs">
+        {{ utilisateur.nom }} {{ utilisateur.prenom }}
+      </li>
+    </ul>
+  </div>
