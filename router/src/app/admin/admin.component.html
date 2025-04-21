@@ -1,0 +1,8 @@
+<h2>Admin View</h2>
+<input [(ngModel)]="newUser" placeholder="Add user" />
+<button (click)="addUser()">Add</button>
+
+<h3>User List</h3>
+<ul>
+    <li *ngFor="let user of users">{{ user }}</li>
+</ul>
